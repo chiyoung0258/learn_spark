@@ -1,5 +1,8 @@
+package main.scala
+
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 
 object WordCount {
   def main(args : Array[String]): Unit = {

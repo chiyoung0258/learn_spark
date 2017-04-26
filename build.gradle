@@ -8,5 +8,15 @@ repositories{
 dependencies {
 	compile 'org.scala-lang:scala-library:2.11.2'
 	compile 'org.apache.spark:spark-core_2.11:2.0.1'
+	zinc 'com.typesafe.zinc:zinc:0.3.9'
+}
+
+jar {
+   version = '1.0'
+   manifest {
+        attributes 'Implementation-Title': 'Spark Implementation',
+                   'Implementation-Version': version
+   }
+   from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
