@@ -1,0 +1,12 @@
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+
+repositories{ 
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.scala-lang:scala-library:2.11.2'
+	compile 'org.apache.spark:spark-core_2.11:2.0.1'
+}
+
