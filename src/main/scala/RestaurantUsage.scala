@@ -1,10 +1,9 @@
+package main.scala
+
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 
-
 object RestaurantUsage {
-  case class FoodRecord(employeeId : String, foodType : String)
-  
   def main (args : Array[String]) : Unit = {
     val input = args(0)
     val output = args(1)
