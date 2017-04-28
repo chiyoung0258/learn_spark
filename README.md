@@ -68,11 +68,20 @@
 ## update gradle 3.5
     $ sudo add-apt-repository ppa:cwchien/gradle
     $ sudo apt-get update
-    $ sudo apt-get install gradle-3
+    $ sudo apt-get install gradle-3.5
 ## configuring zinc compiler (a standalone version of sbt's incremental Scala compiler)
     dependencies {
         zinc 'com.typesafe.zinc:zinc:0.3.9'
     }
 ## run with spark-submit
     SPARK_HOME/bin/spark-submit --class "main.scala.WordCount" build/libs/learn_spark-1.0.jar README.md output
+    
+# Make Test Code
+## generate sample log
+### https://www.mockaroo.com/
+    logid - number
+    time - date
+    account - regular expression - account\d{1}
+    
+    can generate 1000 rows test rows.
 

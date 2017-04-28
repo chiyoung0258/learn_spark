@@ -14,7 +14,7 @@ object RestaurantUsage {
     val fooddata = sc.textFile(input);
     // make record
     val mapRDD = fooddata.flatMap (line => line.split(",")).map(column => ((column(1),column(8)),1))
-    val aggrRDD = mapRDD.reduceByKey()
+    val aggrRDD = mapRDD.reduceByKey((x,y) => x+y)
     val sortedRDD = aggrRDD.sortBy( x => x, true)
     
     sortedRDD.saveAsTextFile(output)
