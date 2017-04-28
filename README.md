@@ -43,6 +43,7 @@
 ### subtractByKey
 ### groupByKey
 ### reduceByKey
+    main.scala.RestaurantUsage
 ## ACTION 
 ### collect
 ### count
