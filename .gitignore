@@ -1,0 +1,8 @@
+.idea/
+.gradle/ 제거할 예정
+build/ 제거할 예정
+gradle/ 제거할 예정
+gradlew 제거할 예정
+gradlew.bat 제거할 예정
+output/ 제거할 예정
+spark-warehouse/ 제거할 예정

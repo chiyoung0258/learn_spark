@@ -1,22 +1,30 @@
+apply plugin: 'java'
 apply plugin: 'scala'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
 
-repositories{ 
-	mavenCentral()
+repositories{
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
 }
 
 dependencies {
 	compile 'org.scala-lang:scala-library:2.11.2'
-	compile 'org.apache.spark:spark-core_2.11:2.0.1'
-	zinc 'com.typesafe.zinc:zinc:0.3.9'
+	compile 'org.apache.spark:spark-core_2.11:2.1.0'
+    compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.1.0'
 }
 
 jar {
+   classifier = 'all'
    version = '1.0'
    manifest {
         attributes 'Implementation-Title': 'Spark Implementation',
                    'Implementation-Version': version
    }
-   from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+   include{sourceSets.main.output.classesDir}
+   zip64 true
 }
 
